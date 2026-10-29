@@ -92,17 +92,17 @@ MLIT's nationwide figure is a weighted average (by number of workers surveyed), 
 
 ## 5. Spot check by eye
 
-Open each file at the page shown and find the prefecture row; the last two columns are guard A and guard B.
+Each row was compared with an image of the PDF page (not the PDF's text layer). Round brackets mark the special Iwate/Miyagi/Fukushima rates.
 
 | Table year | Prefecture | Grade | Value in dataset | File | PDF page | Matches? |
 |---|---|---|---|---|---|---|
-| 2024 | Shizuoka (静岡県) | A | 19,000 | 2024-03_FY2024_release.pdf | 13 | |
-| 2012 | Hiroshima (広島県) | A | 9,000 | 2012-04_FY2012_release.pdf | 8 | |
-| 2021 | Ishikawa (石川県) | A | 14,800 | 2021-03_FY2021_release.pdf | 13 | |
-| 2022 | Shiga (滋賀県) | A | 13,800 | 2022-03_FY2022_release.pdf | 13 | |
-| 2024 | Hyogo (兵庫県) | B | 13,700 | 2024-03_FY2024_release.pdf | 13 | |
-| 2012 | Toyama (富山県) | A | 8,700 | 2012-04_FY2012_release.pdf | 8 | |
-| 2016 | Mie (三重県) | A | 12,400 | 2016-02_FY2016_release.pdf | 9 | |
-| 2022 | Miyagi (宮城県) | B | 13,700 | 2022-03_FY2022_release.pdf | 13 | |
-| 2022 | Hiroshima (広島県) | A | 15,100 | 2022-03_FY2022_release.pdf | 13 | |
-| 2018 | Iwate (岩手県) | A | 12,700 | 2018-03_FY2018_release.pdf | 9 | |
+| 2024 | Shizuoka (静岡県) | A | 19,000 | 2024-03_FY2024_release.pdf | 13 | Yes |
+| 2012 | Hiroshima (広島県) | A | 9,000 | 2012-04_FY2012_release.pdf | 8 | Yes |
+| 2021 | Ishikawa (石川県) | A | 14,800 | 2021-03_FY2021_release.pdf | 13 | Yes |
+| 2022 | Shiga (滋賀県) | A | 13,800 | 2022-03_FY2022_release.pdf | 13 | Yes |
+| 2024 | Hyogo (兵庫県) | B | 13,700 | 2024-03_FY2024_release.pdf | 13 | Yes |
+| 2012 | Toyama (富山県) | A | 8,700 | 2012-04_FY2012_release.pdf | 8 | Yes |
+| 2016 | Mie (三重県) | A | 12,400 | 2016-02_FY2016_release.pdf | 9 | Yes |
+| 2022 | Miyagi (宮城県) | B | 13,700 | 2022-03_FY2022_release.pdf | 13 | Yes |
+| 2022 | Hiroshima (広島県) | A | 15,100 | 2022-03_FY2022_release.pdf | 13 | Yes |
+| 2018 | Iwate (岩手県) | A | 12,700 | 2018-03_FY2018_release.pdf | 9 | Yes |
