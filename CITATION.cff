@@ -1,9 +1,18 @@
 cff-version: 1.2.0
 message: "If you use this data or code, please cite it as below."
-title: "japan-guard-price-panel"
+type: dataset
+title: "japan-guard-price-panel: Japan's public works pay rates for traffic guards by prefecture, FY2012-FY2026"
 authors:
   - family-names: "Azom"
     given-names: "Kazi Affnann"
     orcid: "https://orcid.org/0009-0001-5998-7642"
 repository-code: "https://github.com/Affnann/japan-guard-price-panel"
-license: MIT
+version: "1.0.0"
+date-released: "2026-10-29"
+license: CC-BY-4.0
+keywords:
+  - Japan
+  - security guards
+  - wages
+  - public procurement
+  - labor economics

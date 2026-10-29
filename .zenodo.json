@@ -1,0 +1,11 @@
+{
+  "title": "japan-guard-price-panel: Japan's public works pay rates for traffic guards by prefecture, FY2012-FY2026, with job-openings data for security occupations",
+  "upload_type": "dataset",
+  "description": "<p>The daily pay rates that Japan's Ministry of Land, Infrastructure, Transport and Tourism (MLIT) sets for traffic guards (交通誘導警備員A and B) in its public works design labor rates (公共工事設計労務単価), for all 47 prefectures and every table year from FY2012 to FY2026, extracted from MLIT's yearly releases. The rates are wages for a regular 8-hour day and exclude the security company's overheads, so they are not the price a client pays. Special rates (post-earthquake rates for Iwate, Miyagi and Fukushima; FY2021 COVID-19 measure) are marked. Also includes monthly national job-openings figures for security occupations and all occupations from the Ministry of Health, Labour and Welfare's job placement statistics (一般職業紹介状況), March 2012 to August 2026. Includes the source files, extraction and checking code, check reports, charts and documentation.</p><p>Sources: 「公共工事設計労務単価」（国土交通省）, Public Data License 1.0; 「一般職業紹介状況（職業安定業務統計）」（厚生労働省）, e-Stat. Edited from the original files; not an official government product.</p><p>Dataset: CC BY 4.0. Code: MIT.</p>",
+  "creators": [
+    {"name": "Azom, Kazi Affnann", "orcid": "0009-0001-5998-7642"}
+  ],
+  "license": "cc-by-4.0",
+  "keywords": ["Japan", "security guards", "traffic guards", "wages", "public procurement", "labor economics", "job openings", "private security"],
+  "version": "v1.0.0"
+}
