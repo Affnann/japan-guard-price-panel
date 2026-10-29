@@ -1,5 +1,7 @@
 # japan-guard-price-panel
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23750536.svg)](https://doi.org/10.5281/zenodo.23750536)
+
 Japan's official daily pay rates for traffic guards on public works, for all 47 prefectures, every year from FY2012 to FY2026, alongside how many job openings there are for each security job seeker.
 
 Every year Japan's Ministry of Land, Infrastructure, Transport and Tourism (MLIT) sets the *public works design labor rates* (公共工事設計労務単価): the daily wage that government cost estimates assume for each construction trade in each prefecture. Two of the trades are traffic guards working for private security companies:
@@ -95,4 +97,9 @@ python code/05_charts.py
 
 ## Cite
 
-See [`CITATION.cff`](CITATION.cff).
+Azom, Kazi Affnann (2026). *japan-guard-price-panel: Japan's public works pay rates for traffic guards by prefecture, FY2012-FY2026, with job-openings data for security occupations* (Version v1.0.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.23750537
+
+- This version (v1.0.0): [10.5281/zenodo.23750537](https://doi.org/10.5281/zenodo.23750537)
+- All versions (always points to the latest): [10.5281/zenodo.23750536](https://doi.org/10.5281/zenodo.23750536)
+
+See also [`CITATION.cff`](CITATION.cff).
