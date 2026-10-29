@@ -4,8 +4,8 @@ Japan's official daily pay rates for traffic guards on public works, for all 47 
 
 Every year Japan's Ministry of Land, Infrastructure, Transport and Tourism (MLIT) sets the *public works design labor rates* (公共工事設計労務単価): the daily wage that government cost estimates assume for each construction trade in each prefecture. Two of the trades are traffic guards working for private security companies:
 
-- **Guard A** (交通誘導警備員A): a guard holding a national traffic-guarding certificate (grade 1 or 2), or a guard in a post that legally requires one.
-- **Guard B** (交通誘導警備員B): any other traffic guard.
+- **Guard A** (交通誘導警備員A): a security company guard doing traffic guarding who has passed the national grade 1 or grade 2 traffic-guarding exam.
+- **Guard B** (交通誘導警備員B): any other security company guard directing traffic.
 
 This repo turns the ministry's yearly PDF tables into one clean table.
 
