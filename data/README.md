@@ -5,6 +5,7 @@
 | Source | Publisher | URL | Downloaded on | License / terms |
 |---|---|---|---|---|
 | 公共工事設計労務単価 (public works design labor rates), yearly press releases FY2012–FY2026 | Ministry of Land, Infrastructure, Transport and Tourism (MLIT), Japan | https://www.mlit.go.jp/totikensangyo/const/1_6_bt_000217.html | 2026-10-29 | Public Data License 1.0 (PDL1.0), per https://www.mlit.go.jp/link.html |
+| 一般職業紹介状況（職業安定業務統計）, long time-series table 21 (職業別労働市場関係指標) | Ministry of Health, Labour and Welfare (MHLW), Japan, via e-Stat | https://www.e-stat.go.jp/stat-search/files?toukei=00450222&tstat=000001020327 | 2026-10-29 | e-Stat terms of use (Government Standard Terms of Use 2.0, compatible with CC BY 4.0), per https://www.e-stat.go.jp/terms-of-use |
 
 Credit line for the MLIT files: 出典：「公共工事設計労務単価」（国土交通省） https://www.mlit.go.jp/totikensangyo/const/1_6_bt_000217.html. Any table in `data/clean/` is edited from these files (「公共工事設計労務単価」（国土交通省）を加工して作成) and is not an official MLIT product.
 
@@ -12,6 +13,8 @@ Credit line for the MLIT files: 出典：「公共工事設計労務単価」（
 
 - `guard_rates_by_prefecture.csv`: guard A and B daily rates by prefecture and table year, built by `code/01_extract_mlit_rates.py`. Column definitions are in the main README.
 - `checks_report.md`: output of `code/02_check.py`.
+- `security_jobs_monthly.csv`: monthly job-openings figures for security occupations and all occupations, built by `code/03_extract_mhlw_jobs.py`.
+- `checks_report_jobs.md`: output of `code/04_check_mhlw_jobs.py`.
 
 ## Raw files: `data/raw/mlit/`
 
@@ -48,3 +51,13 @@ File names start with the month the rates took effect (YYYY-MM) and the Japanese
 Notes:
 - `2014-04_FY2014-revision_release.pdf` contains no new rates: it says the rates published on 30 January 2014 stay in force from April 2014.
 - The two `tohoku-3pref` files are mid-year special rates for Iwate, Miyagi and Fukushima after the 2011 earthquake.
+
+## Raw files: `data/raw/mhlw/`
+
+Credit line: 出典：「一般職業紹介状況（職業安定業務統計）」（厚生労働省）, e-Stat. Tables in `data/clean/` are edited from these files.
+
+| File | What it is | Original URL |
+|---|---|---|
+| occ_2012-03_to_2023-03.xlsx | Table 21, occupation figures, MHLW classification (4th revision), March 2012-March 2023 (old format, published 2024-03-29) | https://www.e-stat.go.jp/stat-search/file-download?statInfId=000040050660&fileKind=0 |
+| occ_2023-04_onward.xlsx | Table 21, occupation figures, Japan Standard Occupational Classification, April 2022-August 2026 (published 2026-10-02) | https://www.e-stat.go.jp/stat-search/file-download?statInfId=000040505332&fileKind=0 |
+| occupation_classification_from_2023-04.pdf | MHLW's note on the change of occupation classification from April 2023 | https://www.e-stat.go.jp/stat-search/file-download?statInfId=000040505339&fileKind=2 |
