@@ -99,7 +99,7 @@ python code/05_charts.py
 
 ## Cite
 
-Azom, Kazi Affnann (2026). *japan-guard-price-panel: Japan's public works pay rates for traffic guards by prefecture, FY2012-FY2026, with job-openings data for security occupations* (Version v1.0.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.23750537
+Azom, Kazi Affnann (2026). *japan-guard-price-panel: Japan's public works pay rates for traffic guards by prefecture, FY2012-FY2026, with job-openings data for security occupations* (Version v1.0.0) [Data set]. Mercenomics. https://doi.org/10.5281/zenodo.23750537
 
 - This version (v1.0.0): [10.5281/zenodo.23750537](https://doi.org/10.5281/zenodo.23750537)
 - All versions (always points to the latest): [10.5281/zenodo.23750536](https://doi.org/10.5281/zenodo.23750536)
