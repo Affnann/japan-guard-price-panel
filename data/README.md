@@ -8,6 +8,11 @@
 
 Credit line for the MLIT files: 出典：「公共工事設計労務単価」（国土交通省） https://www.mlit.go.jp/totikensangyo/const/1_6_bt_000217.html. Any table in `data/clean/` is edited from these files (「公共工事設計労務単価」（国土交通省）を加工して作成) and is not an official MLIT product.
 
+## Clean files: `data/clean/`
+
+- `guard_rates_by_prefecture.csv`: guard A and B daily rates by prefecture and table year, built by `code/01_extract_mlit_rates.py`. Column definitions are in the main README.
+- `checks_report.md`: output of `code/02_check.py`.
+
 ## Raw files: `data/raw/mlit/`
 
 File names start with the month the rates took effect (YYYY-MM) and the Japanese fiscal year they cover (April–March). `release` is the main press release with the rate tables; `reference` is the supporting material published with it.
