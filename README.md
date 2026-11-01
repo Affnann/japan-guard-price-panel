@@ -184,10 +184,11 @@ Azom, Kazi Affnann (2026). "Who Gets the Raise? Japan's Public Works Pay Rates a
 
 ## Cite
 
-Azom, Kazi Affnann (2026). *japan-guard-price-panel: Japan's public works pay rates for traffic guards, security guards' pay and minimum wages by prefecture, 2012-2026* (Version v1.2.0) [Data set]. Mercenomics. https://doi.org/10.5281/zenodo.23852751
+Azom, Kazi Affnann (2026). *japan-guard-price-panel: Japan's public works pay rates for traffic guards, security guards' pay and minimum wages by prefecture, 2012-2026* (Version v1.2.1) [Data set]. Mercenomics. https://doi.org/10.5281/zenodo.23856290
 
-- This version (v1.2.0): [10.5281/zenodo.23852751](https://doi.org/10.5281/zenodo.23852751)
+- This version (v1.2.1): [10.5281/zenodo.23856290](https://doi.org/10.5281/zenodo.23856290)
 - All versions (always points to the latest): [10.5281/zenodo.23750536](https://doi.org/10.5281/zenodo.23750536)
+- Version v1.2.0: [10.5281/zenodo.23852751](https://doi.org/10.5281/zenodo.23852751)
 - Version v1.1.0: [10.5281/zenodo.23852300](https://doi.org/10.5281/zenodo.23852300)
 - Version v1.0.0 (guard rates and job openings only): [10.5281/zenodo.23750537](https://doi.org/10.5281/zenodo.23750537)
 

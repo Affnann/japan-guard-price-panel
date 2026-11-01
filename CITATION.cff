@@ -9,8 +9,11 @@ authors:
     affiliation: "Mercenomics"
 repository-code: "https://github.com/Affnann/japan-guard-price-panel"
 version: "1.2.1"
-doi: "10.5281/zenodo.23750536"
+doi: "10.5281/zenodo.23856290"
 identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23856290"
+    description: "This version (v1.2.1)"
   - type: doi
     value: "10.5281/zenodo.23750536"
     description: "Concept DOI for all versions"
