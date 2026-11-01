@@ -8,15 +8,15 @@ authors:
     orcid: "https://orcid.org/0009-0001-5998-7642"
     affiliation: "Mercenomics"
 repository-code: "https://github.com/Affnann/japan-guard-price-panel"
-version: "1.2.0"
-doi: "10.5281/zenodo.23852751"
+version: "1.2.1"
+doi: "10.5281/zenodo.23750536"
 identifiers:
-  - type: doi
-    value: "10.5281/zenodo.23852751"
-    description: "This version (v1.2.0)"
   - type: doi
     value: "10.5281/zenodo.23750536"
     description: "Concept DOI for all versions"
+  - type: doi
+    value: "10.5281/zenodo.23852751"
+    description: "Version v1.2.0"
   - type: doi
     value: "10.5281/zenodo.23852300"
     description: "Version v1.1.0"

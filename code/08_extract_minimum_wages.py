@@ -10,6 +10,7 @@ import datetime
 import os
 import re
 import unicodedata
+from decimal import Decimal, ROUND_HALF_UP
 
 import openpyxl
 
@@ -28,6 +29,12 @@ def fiscal_year(label):
     m = re.match(r'^(平成|令和)(\d+)年度$', s)
     assert m, label
     return (1988 if m.group(1) == '平成' else 2018) + int(m.group(2))
+
+
+def yen(v):
+    """Whole yen as MHLW's file displays it (format #,##0): rounded half up, not truncated.
+    The national weighted averages are stored with decimals (e.g. FY2017 847.72, shown as 848)."""
+    return int(Decimal(str(v)).quantize(Decimal('1'), rounding=ROUND_HALF_UP))
 
 
 def excel_date(v):
@@ -58,14 +65,15 @@ def main():
         if name == '全国加重平均額':
             for k, fy in enumerate(years):
                 out.append({'fiscal_year': fy, 'pref_code': '00', 'prefecture_ja': '全国（加重平均）',
-                            'prefecture_en': 'Japan (weighted average)', 'hourly_yen': int(r[1 + 2 * k]),
+                            'prefecture_en': 'Japan (weighted average)', 'hourly_yen': yen(r[1 + 2 * k]),
                             'effective_date': ''})
             continue
         code, en, ja = by_name[name]
         for k, fy in enumerate(years):
             amount, eff = r[1 + 2 * k], r[2 + 2 * k]
+            assert float(amount) == int(amount), (name, fy, amount)   # prefecture amounts are whole yen
             out.append({'fiscal_year': fy, 'pref_code': code, 'prefecture_ja': ja, 'prefecture_en': en,
-                        'hourly_yen': int(amount), 'effective_date': excel_date(eff).isoformat()})
+                        'hourly_yen': yen(amount), 'effective_date': excel_date(eff).isoformat()})
     out.sort(key=lambda x: (x['fiscal_year'], x['pref_code']))
     with open(OUT, 'w', newline='', encoding='utf-8') as f:
         w = csv.DictWriter(f, fieldnames=list(out[0].keys()))

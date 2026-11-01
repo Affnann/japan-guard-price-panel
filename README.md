@@ -145,6 +145,7 @@ Minimum wages: `code/09_check_minimum_wages.py` writes `data/clean/checks_report
 3. Each revision took effect within its fiscal year (or keeps the earlier date when the amount did not change).
 4. The national weighted average lies between the lowest and highest prefecture.
 5. The national averages for FY2024 (1,055 yen) and FY2025 (1,121 yen) match MHLW's press release.
+6. Every amount was read a second time from MHLW's file with a different Excel reader (python-calamine): all 1,200 agree with the file as it displays them, in whole yen. MHLW stores the national averages with decimals (FY2017: 847.72, displayed as 848); they are rounded, not truncated.
 
 ## Reproduce
 
@@ -164,9 +165,14 @@ python code/10_charts_pay.py
 
 ## Versions
 
+- **v1.2.1** (1 November 2026): corrects two national weighted averages of the minimum wage, FY2017 (848 yen, not 847) and FY2026 (1,177 yen, not 1,176), which the extraction had truncated instead of rounding; adds a second reading of MHLW's minimum wage file to the checks. No prefecture value changes, and the guard rates and pay figures are unchanged.
 - **v1.2.0** (1 November 2026): adds other protective service workers (その他の保安職業従事者, MHLW occupation 1459, 2020-2025), the occupation in which MHLW's definitions place traffic and crowd guards; adds MHLW's occupation explanations for 2019 and 2021 to `data/raw/mhlw_wages/`; corrects this README's description of the security guard occupation, which does not cover traffic guarding, and its count of FY2021 COVID-19 rates (eight prefectures, not five). The rows of v1.1.0 are unchanged.
 - **v1.1.0** (1 November 2026): adds pay by prefecture (2012-2025) and prefecture minimum wages (FY2002-FY2026).
 - **v1.0.0**: guard rates (FY2012-FY2026) and monthly job openings for security occupations.
+
+## Used in
+
+Azom, Kazi Affnann (2026). "Who Gets the Raise? Japan's Public Works Pay Rates and the Wages of Security Guards." Preprint. Zenodo. https://doi.org/10.5281/zenodo.23852894 (replication package: https://doi.org/10.5281/zenodo.23852892)
 
 ## Sources and license
 

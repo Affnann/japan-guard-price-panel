@@ -25,6 +25,10 @@ Output of `code/09_check_minimum_wages.py`.
 - FY2025: file 1,121 yen, press release 1,121 yen: match.
 - FY2024: file 1,055 yen, press release 1,055 yen: match.
 
+## 6. Second reading of MHLW's file (python-calamine)
+
+- 1,200 amounts read again: all 1,200 agree.
+
 ## Result
 
 - All checks passed.

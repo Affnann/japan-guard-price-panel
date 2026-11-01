@@ -80,7 +80,7 @@ def minwage():
     ax.yaxis.set_major_formatter(matplotlib.ticker.FuncFormatter(lambda v, _: f"¥{v:,.0f}"))
     style(ax, "Minimum wage, national weighted average of the 47 prefectures", "Yen per hour")
     fig.text(0.01, 0.01, "Source: MHLW, 地域別最低賃金改定状況, FY2012-FY2026 (each year's revision takes effect "
-             "from October onwards).", color=MUTED, fontsize=7.5)
+             "from the end of September onwards).", color=MUTED, fontsize=7.5)
     fig.tight_layout(rect=(0, 0.03, 1, 1))
     fig.savefig(os.path.join(ROOT, "figures/minimum_wage.png"), dpi=150)
 
