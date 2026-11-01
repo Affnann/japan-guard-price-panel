@@ -2,3 +2,5 @@ pymupdf
 pdfplumber
 openpyxl
 matplotlib
+xlrd
+python-calamine
