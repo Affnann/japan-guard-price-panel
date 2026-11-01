@@ -4,18 +4,18 @@
 
 Published by [Mercenomics](https://mercenomics.org), an independent data archive on the business of force for hire.
 
-Japan's official daily pay rates for traffic guards on public works, for all 47 prefectures, every year from FY2012 to FY2026; what security guards are actually paid in each prefecture, 2012-2025; each prefecture's minimum wage, FY2002-FY2026; and how many job openings there are for each security job seeker.
+Japan's official daily pay rates for traffic guards on public works, for all 47 prefectures, every year from FY2012 to FY2026; what security guards are actually paid in each prefecture, 2012-2025, and, from 2020, what other protective service workers, the occupation that includes traffic guards, are paid; each prefecture's minimum wage, FY2002-FY2026; and how many job openings there are for each security job seeker.
 
 Every year Japan's Ministry of Land, Infrastructure, Transport and Tourism (MLIT) sets the *public works design labor rates* (公共工事設計労務単価): the daily wage that government cost estimates assume for each construction trade in each prefecture. Two of the trades are traffic guards working for private security companies:
 
 - **Guard A** (交通誘導警備員A): a security company guard doing traffic guarding who has passed the national grade 1 or grade 2 traffic-guarding exam.
 - **Guard B** (交通誘導警備員B): any other security company guard directing traffic.
 
-This repo turns the ministry's yearly PDF tables into one clean table. It adds three series from the Ministry of Health, Labour and Welfare (MHLW): what security guards (and, for comparison, building cleaners) are paid in each prefecture, from the Basic Survey on Wage Structure; each prefecture's minimum wage; and monthly job-openings figures for security occupations.
+This repo turns the ministry's yearly PDF tables into one clean table. It adds three series from the Ministry of Health, Labour and Welfare (MHLW): what security guards, other protective service workers (from 2020) and, for comparison, building cleaners are paid in each prefecture, from the Basic Survey on Wage Structure; each prefecture's minimum wage; and monthly job-openings figures for security occupations.
 
 ![Traffic guard daily rate](figures/guard_rates.png)
 
-![Monthly scheduled earnings of security guards and building cleaners](figures/guard_pay.png)
+![Monthly scheduled earnings of security guards, other protective service workers and building cleaners](figures/guard_pay.png)
 
 ![Minimum wage](figures/minimum_wage.png)
 
@@ -42,7 +42,7 @@ This repo turns the ministry's yearly PDF tables into one clean table. It adds t
 
 ### Pay: `data/clean/pay_by_prefecture.csv`
 
-What full-time security guards are paid in each prefecture and in Japan as a whole, survey years 2012-2025, from MHLW's Basic Survey on Wage Structure (賃金構造基本統計調査), with two comparison occupations: building cleaners (ビル清掃員 to 2019, ビル・建物清掃員 from 2020) and, to 2019, gatekeepers (守衛, see below). 6,144 rows.
+What full-time security guards are paid in each prefecture and in Japan as a whole, survey years 2012-2025, from MHLW's Basic Survey on Wage Structure (賃金構造基本統計調査), with three other occupations: building cleaners (ビル清掃員 to 2019, ビル・建物清掃員 from 2020), gatekeepers (守衛, to 2019) and, from 2020, other protective service workers (その他の保安職業従事者), the occupation in which MHLW's definitions place traffic guards (see below). 7,872 rows.
 
 | Column | Meaning |
 |---|---|
@@ -50,7 +50,7 @@ What full-time security guards are paid in each prefecture and in Japan as a who
 | `classification` | MHLW's occupation list to 2019, or the list based on the Japan Standard Occupational Classification from 2020 |
 | `position_holders` | `excluded`: workers who are not position holders (役職者); `included`: all workers (2020-2025 only) |
 | `pref_code`, `prefecture_ja`, `prefecture_en` | Prefecture (standard codes 01-47; 00 = Japan) |
-| `occupation`, `occupation_en`, `occupation_ja` | `security_guards`, `building_cleaners` or `gatekeepers` |
+| `occupation`, `occupation_en`, `occupation_ja` | `security_guards`, `building_cleaners`, `gatekeepers` (to 2019) or `other_protective` (from 2020) |
 | `sex` | `total` (both sexes), `male` or `female` |
 | `age`, `tenure_years` | Average age and years of service |
 | `scheduled_hours`, `overtime_hours` | Hours worked in June: scheduled (所定内実労働時間数) and overtime (超過実労働時間数) |
@@ -93,7 +93,7 @@ Monthly national figures, March 2012 to August 2026, from MHLW's job placement s
 
 - **They are wages, not prices.** MLIT states that the rates cover only the wage paid to the worker. They exclude the security company's overheads, employer social insurance, training and profit, so they are well below what a client pays a security company per guard-day.
 - They are set from MLIT's yearly survey of wages actually paid on public works, and are used to estimate costs for public contracts.
-- **Special rates.** In FY2012-FY2022, Iwate, Miyagi and Fukushima carry special rates (round brackets in the source) set to reflect failed tenders after the 2011 earthquake. In FY2021, five prefectures carry rates under a special COVID-19 measure (angle brackets). These are marked in `special_rate`.
+- **Special rates.** In FY2012-FY2022, Iwate, Miyagi and Fukushima carry special rates (round brackets in the source) set to reflect failed tenders after the 2011 earthquake. In FY2021, eight prefectures carry a rate for one grade under a special COVID-19 measure that kept rates that would have fallen at the previous year's level (angle brackets): guard A in Niigata, Tokushima, Kagawa, Ehime and Kochi, and guard B in Gifu, Shizuoka and Mie. (Versions 1.0.0 and 1.1.0 of this README said five prefectures; the data were right.) These are marked in `special_rate`.
 - **FY2013 jump.** Almost every prefecture rises more than 15% between FY2012 and FY2013. This matches MLIT's own figure of a 15.1% rise across all trades that year; it is not a data error.
 - FY2012 calls the two grades 交通誘導員A/B; from FY2014 they are called 交通誘導警備員A/B.
 - Before FY2007 the two grades were not separated, so the panel starts at FY2012, the earliest year MLIT links online.
@@ -101,11 +101,12 @@ Monthly national figures, March 2012 to August 2026, from MHLW's job placement s
 ## What the pay figures are, and are not
 
 - **Full-time workers only.** The figures are for general workers (一般労働者), that is, workers who are not short-time workers. Scheduled earnings are the pay for June under the employment contract, without overtime and similar pay, before tax; bonuses cover January-December of the previous year.
-- **All security guards, not only traffic guards.** MHLW's occupation covers guards of every kind. From 2020 it also includes gatekeepers: MHLW's 2020 guide maps 守衛 (old number 602) and 警備員 (old number 601) to the new occupation 1453 警備員. To 2019 the two are separate rows here, so a series close to the new definition can be built by combining them, weighted by workers.
+- **Security guards are not traffic guards.** By MHLW's own definitions, its security guard occupation covers facility and personal guarding, not traffic guarding. From 2020, occupation 1453 警備員 covers guarding people or facilities (its examples are bodyguards, gatekeepers, gate guards, security guards, night watchmen and warehouse guards), while traffic guards (交通誘導員), crowd guards (雑踏警備員) and construction site guides (建設現場誘導員) are listed under 1459 その他の保安職業従事者, other protective service workers, together with airport firefighters, traffic patrol staff, road supervisors and pool and beach lifeguards (MHLW, 2021 survey, 役職及び職種解説, page 15; file `data/raw/mhlw_wages/occupations_explained_2021.pdf`). To 2019, MHLW's definition of 警備員 is guards employed by a security business certified under the Security Business Act who guard offices, homes, venues, car parks and the like against theft, cash and valuables in transit, or people against harm; it does not mention traffic or crowd guarding (2019 survey, page 12; `occupations_explained_2019.pdf`), and the list to 2019 has no other occupation for them. Whether employers reported traffic guards under 警備員 before 2020, and how many still do, cannot be told from these tables. In these tables other protective service workers are a fifth to a third as many as security guards (42,000-69,000 full-time workers nationally in 2020-2025, excluding position holders, against 175,000-226,000).
+- **Gatekeepers.** From 2020 security guards also include gatekeepers: MHLW's 2020 guide maps 守衛 (old number 602) and 警備員 (old number 601) to the new occupation 1453 警備員. To 2019 the two are separate rows here, so a series close to the new definition can be built by combining them, weighted by workers.
 - **The survey changed in 2020.** In MHLW's words, from 2020 it covers all workers, including position holders, in 144 occupations consistent with the Japan Standard Occupational Classification; until 2019 it covered some workers, excluding position holders, in 129 occupations of its own. The way the sample is scaled up to the population also changed. Figures before and after 2020 are therefore not strictly comparable.
 - **Position holders.** MHLW also publishes the 2020-2025 tables without position holders (役職者: department heads, section heads, supervisors and similar ranks), which matches the coverage of the years before 2020. Both versions are kept: use `position_holders = excluded` for a series that runs from 2012 to 2025.
 - **A sample survey.** Prefecture figures for one occupation rest on a sample of establishments and workers, so small prefectures can move a lot from one year to the next (the checks list every change over 15%). Worker counts are estimates, published in tens.
-- **Gaps.** MHLW leaves a cell blank ("-") when it publishes no figure; 39 rows here are blank, mostly women guards in small prefectures and gatekeepers.
+- **Gaps.** MHLW leaves a cell blank ("-") when it publishes no figure; 201 rows here are blank, mostly women in small prefectures, gatekeepers, and other protective service workers in Ishikawa (2020) and Shimane (2020, 2023, 2024).
 
 ## What the minimum wages are
 
@@ -131,8 +132,8 @@ Job openings: `code/04_check_mhlw_jobs.py` writes `data/clean/checks_report_jobs
 Pay: `code/07_check_mhlw_wages.py` writes `data/clean/checks_report_pay.md`:
 
 1. Every survey year has Japan and all 47 prefectures for each occupation and coverage.
-2. Every value was read a second time from the source file with a different Excel reader (python-calamine; the extraction uses xlrd and openpyxl): all 49,152 values agree.
-3. Where MHLW publishes both sexes and each sex, total workers equal men plus women (1,507 of 1,507 region-years, within 20 people) and the total's earnings lie between men's and women's (1,507 of 1,507).
+2. Every value was read a second time from the source file with a different Excel reader (python-calamine; the extraction uses xlrd and openpyxl): all 62,976 values agree.
+3. Where MHLW publishes both sexes and each sex, total workers equal men plus women (1,937 of 1,937 region-years, within 20 people) and the total's earnings lie between men's and women's (1,937 of 1,937).
 4. Japan's figures match the worker-weighted mean of the 47 prefectures (largest gap 0.18 thousand yen) and the sum of their workers.
 5. Every year-on-year change over 15% is listed for inspection.
 6. Every blank cell is listed.
@@ -160,6 +161,12 @@ python code/08_extract_minimum_wages.py
 python code/09_check_minimum_wages.py
 python code/10_charts_pay.py
 ```
+
+## Versions
+
+- **v1.2.0** (1 November 2026): adds other protective service workers (その他の保安職業従事者, MHLW occupation 1459, 2020-2025), the occupation in which MHLW's definitions place traffic and crowd guards; adds MHLW's occupation explanations for 2019 and 2021 to `data/raw/mhlw_wages/`; corrects this README's description of the security guard occupation, which does not cover traffic guarding, and its count of FY2021 COVID-19 rates (eight prefectures, not five). The rows of v1.1.0 are unchanged.
+- **v1.1.0** (1 November 2026): adds pay by prefecture (2012-2025) and prefecture minimum wages (FY2002-FY2026).
+- **v1.0.0**: guard rates (FY2012-FY2026) and monthly job openings for security occupations.
 
 ## Sources and license
 

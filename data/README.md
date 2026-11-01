@@ -17,7 +17,7 @@ Credit line for the MLIT files: 出典：「公共工事設計労務単価」（
 - `checks_report.md`: output of `code/02_check.py`.
 - `security_jobs_monthly.csv`: monthly job-openings figures for security occupations and all occupations, built by `code/03_extract_mhlw_jobs.py`.
 - `checks_report_jobs.md`: output of `code/04_check_mhlw_jobs.py`.
-- `pay_by_prefecture.csv`: pay of security guards, building cleaners and (to 2019) gatekeepers by prefecture, survey years 2012-2025, built by `code/06_extract_mhlw_wages.py`. Column definitions are in the main README.
+- `pay_by_prefecture.csv`: pay of security guards, building cleaners, (to 2019) gatekeepers and (from 2020) other protective service workers by prefecture, survey years 2012-2025, built by `code/06_extract_mhlw_wages.py`. Column definitions are in the main README.
 - `checks_report_pay.md`: output of `code/07_check_mhlw_wages.py`.
 - `minimum_wage_by_prefecture.csv`: prefecture minimum wages and their effective dates, FY2002-FY2026, built by `code/08_extract_minimum_wages.py`.
 - `checks_report_minwage.md`: output of `code/09_check_minimum_wages.py`.
@@ -156,6 +156,13 @@ Each survey year's prefecture table by occupation and sex comes in four files, s
 | wage_2025_b_chiba-aichi_excl-positions.xlsx | 2025 参考表4 (excluding position holders) | Chiba to Aichi | https://www.e-stat.go.jp/stat-search/file-download?statInfId=000040421209&fileKind=4 |
 | wage_2025_c_mie-yamaguchi_excl-positions.xlsx | 2025 参考表4 (excluding position holders) | Mie to Yamaguchi | https://www.e-stat.go.jp/stat-search/file-download?statInfId=000040421210&fileKind=4 |
 | wage_2025_d_tokushima-okinawa_excl-positions.xlsx | 2025 参考表4 (excluding position holders) | Tokushima to Okinawa | https://www.e-stat.go.jp/stat-search/file-download?statInfId=000040421211&fileKind=4 |
+
+MHLW's explanations of its occupations (役職及び職種解説), kept to document what each occupation covers:
+
+| File | What it is | Original URL |
+|---|---|---|
+| occupations_explained_2019.pdf | 令和元年 (2019) survey, the last year of MHLW's own occupation list; 警備員 and 守衛 on page 12 | https://www.e-stat.go.jp/stat-search/file-download?statInfId=000031919730&fileKind=2 |
+| occupations_explained_2021.pdf | 令和３年 (2021) survey, occupations based on the Japan Standard Occupational Classification; 1453 警備員 and 1459 その他の保安職業従事者 on page 15 | https://www.e-stat.go.jp/stat-search/file-download?statInfId=000032210145&fileKind=2 |
 
 ## Raw files: `data/raw/mhlw_minwage/`
 

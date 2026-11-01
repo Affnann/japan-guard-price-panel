@@ -1,5 +1,6 @@
-"""Extract what security guards (and, for comparison, building cleaners and, to 2019,
-gatekeepers) are actually paid, by prefecture, from MHLW's Basic Survey on Wage Structure (賃金構造基本統計調査).
+"""Extract what security guards (and, for comparison, building cleaners, to 2019 gatekeepers and, from 2020,
+other protective service workers, the occupation that includes traffic guards) are actually paid, by prefecture,
+from MHLW's Basic Survey on Wage Structure (賃金構造基本統計調査).
 
 Inputs (data/raw/mhlw_wages/):
   wage_{year}_{a..d}_{prefecture range}.xls(x), survey years 2012-2025
@@ -48,6 +49,10 @@ OCCUPATIONS = {
     '守衛': ('gatekeepers', 'Gatekeepers (to 2019)'),
     'ビル清掃員': ('building_cleaners', 'Building cleaners'),
     'ビル・建物清掃員': ('building_cleaners', 'Building cleaners'),
+    # From 2020 MHLW's occupation explanations (役職及び職種解説) put traffic guards (交通誘導員), crowd guards
+    # (雑踏警備員) and construction site guides (建設現場誘導員) in occupation 1459, other protective service
+    # workers, not in 1453 警備員, which covers facility and personal guarding. The list to 2019 has no such row.
+    'その他の保安職業従事者': ('other_protective', 'Other protective service workers (from 2020)'),
 }
 SEX = {'男女計': 'total', '男': 'male', '女': 'female'}
 

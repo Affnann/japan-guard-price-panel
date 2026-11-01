@@ -5,7 +5,7 @@
 2. Second reading: every value is read again from the source file with a different Excel
    reader (python-calamine) at the recorded row and column, and compared.
 3. Men and women add up: where all three rows are published, total workers equal men plus
-   women (to rounding), and total earnings equal the worker-weighted mean of men and women.
+   women (to rounding), and total earnings lie between men's and women's.
 4. Japan against the prefectures: Japan's scheduled earnings against the worker-weighted
    mean of the 47 prefectures, and Japan's workers against their sum.
 5. Large year-on-year changes (over 15 percent) in scheduled earnings, listed.
@@ -25,8 +25,10 @@ CLEAN = os.path.join(ROOT, "data", "clean", "pay_by_prefecture.csv")
 REPORT = os.path.join(ROOT, "data", "clean", "checks_report_pay.md")
 FIELDS = ['age', 'tenure_years', 'scheduled_hours', 'overtime_hours', 'contractual_earnings_kyen',
           'scheduled_earnings_kyen', 'annual_bonus_kyen', 'workers_tens']
-OCC = {'security_guards': 'Security guards', 'building_cleaners': 'Building cleaners', 'gatekeepers': 'Gatekeepers'}
-SPAN = {'security_guards': (2012, 2025), 'building_cleaners': (2012, 2025), 'gatekeepers': (2012, 2019)}
+OCC = {'security_guards': 'Security guards', 'building_cleaners': 'Building cleaners', 'gatekeepers': 'Gatekeepers',
+       'other_protective': 'Other protective service workers'}
+SPAN = {'security_guards': (2012, 2025), 'building_cleaners': (2012, 2025), 'gatekeepers': (2012, 2019),
+        'other_protective': (2020, 2025)}
 
 
 def norm(s):
@@ -65,7 +67,8 @@ def main():
                         problems.append(f'{occ} {cov} {y} {s}: {n} regions')
     women_guards_old = [y for y in range(2012, 2020) if have[('security_guards', 'excluded', y, 'female')]]
     lines.append(f'- Every survey year 2012-2025 has Japan and all 47 prefectures for security guards and building '
-                 f'cleaners, and 2012-2019 for gatekeepers (merged into security guards from 2020), '
+                 f'cleaners, 2012-2019 for gatekeepers (merged into security guards from 2020) and 2020-2025 for other '
+                 f'protective service workers (the occupation that includes traffic guards from 2020), '
                  f'excluding position holders (and, for 2020-2025, also including them), '
                  f'both sexes combined and men; women are published for building cleaners in every year '
                  f'and for security guards from 2020 (MHLW\'s list to 2019 has no separate row for women '
